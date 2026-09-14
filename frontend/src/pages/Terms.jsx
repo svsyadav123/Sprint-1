@@ -1,0 +1,30 @@
+import { useNavigate } from "react-router-dom";
+
+const sections = [
+  ["Introduction", "These Terms and Conditions explain how you may use ZeroMind, a platform for creating and working with personalized AI assistants. ZeroMind is designed as a practical AI SaaS demonstration and productivity workspace."],
+  ["Acceptance of Terms", "By creating an account or using ZeroMind, you agree to these Terms. If you do not agree, do not use the service. You must be legally able to accept these Terms in your location."],
+  ["Using ZeroMind", "You may use ZeroMind to create AI profiles, save conversations, and explore the available workspace features for lawful personal, educational, or business purposes. You are responsible for keeping your account access secure."],
+  ["AI Profiles", "AI profiles contain the name, purpose, personality, behavior, and learning interests you choose. You are responsible for reviewing profile details before relying on the assistant or sharing its output."],
+  ["AI-Generated Content", "ZeroMind may provide demo or AI-generated responses based on your messages and profile settings. Generated content may be incomplete, inaccurate, biased, or unsuitable for your situation. Review it before using, publishing, or acting on it."],
+  ["User Responsibilities", "You are responsible for the information you submit, the conversations you start, and activity performed through your account. Keep your login details private and notify ZeroMind if you believe your account has been used without permission."],
+  ["Acceptable Use", "Use ZeroMind only in ways that respect applicable laws, the rights of other people, and the security of the service. Do not use it to deceive, harass, exploit, or expose others to unlawful or harmful material."],
+  ["Privacy", "ZeroMind uses account information to provide authentication and workspace access. Account data is stored in MySQL, while AI profiles and conversations may be stored in MongoDB. Do not submit information you are not authorized to share."],
+  ["Conversation/Data", "Conversations and AI profile data may remain associated with your account so that you can continue using them across sessions. You should avoid placing passwords, financial details, government identifiers, or other highly sensitive information in chat messages."],
+  ["Third-Party Services", "ZeroMind may rely on services such as hosting, databases, authentication infrastructure, or future AI providers. Third-party services may have their own terms and privacy practices, and ZeroMind is not responsible for services it does not control."],
+  ["AI Limitations", "AI systems do not understand situations like a human professional and may produce confident but incorrect responses. ZeroMind is not a substitute for medical, legal, financial, safety, or other qualified professional advice."],
+  ["Prohibited Activities", "You may not attempt to bypass authentication, access another user's AI or conversations, interfere with the service, upload malicious code, scrape protected data, reverse engineer restricted systems, or use ZeroMind to facilitate fraud or abuse."],
+  ["Plans/Payments", "Any plans or purchase controls currently shown in ZeroMind are demonstration controls only unless a separate written notice says otherwise. No real payment is processed through the current demo implementation."],
+  ["Account Termination", "You may stop using ZeroMind at any time. ZeroMind may suspend or terminate access when necessary to protect the service, users, or legal compliance. Access to protected features ends when an account session is cleared or an account is terminated."],
+  ["Intellectual Property", "ZeroMind's name, interface, software, and original materials belong to their respective owners. You retain responsibility for content you submit, subject to the rights needed for ZeroMind to store and display it as part of the service."],
+  ["Service Availability", "ZeroMind is provided on an as-available basis. Features may be changed, paused, or unavailable during maintenance, database interruptions, configuration issues, or other circumstances outside reasonable control."],
+  ["Disclaimer", "ZeroMind is provided for practical productivity and demonstration purposes without guarantees that it will be uninterrupted, error-free, or suitable for every purpose. Use your own judgment when relying on any output."],
+  ["Limitation of Liability", "To the fullest extent permitted by applicable law, ZeroMind and its contributors are not liable for indirect, incidental, special, or consequential loss arising from use of, or inability to use, the service or generated content."],
+  ["Changes to Terms", "These Terms may be updated as ZeroMind develops. The updated version will be posted on this page with a revised effective date. Continued use after an update means you accept the revised Terms."],
+  ["Contact", "For questions about these Terms or the ZeroMind project, use the contact channel provided by the project owner or administrator. Include enough detail for your request to be understood and reviewed."],
+  ["Effective Date", "These Terms are effective September 13, 2026."]
+];
+
+export default function Terms() {
+  const navigate = useNavigate();
+  return <main className="min-h-screen bg-gray-50 px-5 py-8 text-gray-900"><section className="mx-auto max-w-3xl"><button onClick={() => navigate("/settings")} className="text-sm text-gray-600 hover:text-gray-900">← Back to settings</button><header className="mt-6 border-b border-gray-200 pb-7"><p className="text-sm font-semibold uppercase tracking-wide text-gray-500">ZeroMind</p><h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Terms & Conditions</h1><p className="mt-3 text-sm leading-6 text-gray-600">The rules for using the ZeroMind personalized AI workspace.</p></header><article className="mt-8 space-y-8 rounded-xl border border-gray-200 bg-white p-6 sm:p-8">{sections.map(([heading, text]) => <section key={heading}><h2 className="text-lg font-semibold">{heading}</h2><p className="mt-2 text-sm leading-7 text-gray-600">{text}</p></section>)}</article></section></main>;
+}

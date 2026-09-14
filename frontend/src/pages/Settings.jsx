@@ -1,0 +1,9 @@
+import { useNavigate } from "react-router-dom";
+import { useTheme } from "../ThemeContext";
+
+export default function Settings() {
+  const navigate = useNavigate();
+  const { theme, setTheme } = useTheme();
+  const dark = theme === "dark";
+  return <main className={`min-h-screen px-5 py-8 ${dark ? "bg-gray-900 text-white" : "bg-gray-50 text-gray-900"}`}><section className="mx-auto max-w-2xl"><button onClick={() => navigate("/workspace")} className={`text-sm ${dark ? "text-gray-300" : "text-gray-600"}`}>← Back to workspace</button><h1 className="mt-6 text-3xl font-bold">Settings</h1><div className={`mt-8 divide-y rounded-xl border ${dark ? "divide-gray-700 border-gray-700 bg-gray-800" : "divide-gray-200 border-gray-200 bg-white"}`}><button onClick={() => navigate("/profile")} className="flex w-full items-center justify-between p-5 text-left"><span><strong className="block text-sm">Edit Profile</strong><span className="mt-1 block text-sm opacity-70">Update your account and AI profile.</span></span><span>→</span></button><div className="p-5"><div className="flex items-center justify-between gap-4"><span><strong className="block text-sm">Theme</strong><span className="mt-1 block text-sm opacity-70">Choose a workspace appearance.</span></span><select value={theme} onChange={(event) => setTheme(event.target.value)} className="rounded-lg border border-gray-300 px-3 py-2 text-sm font-semibold"><option value="light">Light</option><option value="dark">Dark</option><option value="samaze">Samaze</option></select></div></div><button onClick={() => navigate("/terms")} className="flex w-full items-center justify-between p-5 text-left"><span><strong className="block text-sm">Terms & Conditions</strong><span className="mt-1 block text-sm opacity-70">Read the ZeroMind service terms.</span></span><span>→</span></button></div></section></main>;
+}
